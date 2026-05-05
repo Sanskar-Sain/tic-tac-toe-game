@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(12px);
+    width: 420px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.status {
+    margin-bottom: 20px;
+    font-size: 22px;
+    min-height: 30px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.cell {
+    width: 110px;
+    height: 110px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    font-size: 46px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.cell:hover {
+    transform: scale(1.06);
+    background: white;
+    box-shadow: 0 0 12px rgba(255,255,255,0.5);
+}
+
+button {
+    padding: 13px 28px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: white;
+    color: #222;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #e8e8e8;
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+.x-style {
+    color: #1e3c72;
+    animation: pop 0.3s ease;
+}
+
+.o-style {
+    color: #c94b4b;
+    animation: pop 0.3s ease;
+}
+
+.winner {
+    background: #8ef58e !important;
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(142,245,142,0.9);
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.4);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media(max-width: 500px) {
+    .game-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 90px);
+    }
+
+    .cell {
+        width: 90px;
+        height: 90px;
+        font-size: 38px;
+    }
+}
