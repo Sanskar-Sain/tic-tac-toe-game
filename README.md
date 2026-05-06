@@ -6,7 +6,7 @@ This project features a modern UI, score tracking, winner detection, restart fun
 ---
 
 ## 🚀 Live Demo
-https://serene-cascaron-257e14.netlify.app/
+https://tictactoe-sanskar.netlify.app/
 
 ---
 
